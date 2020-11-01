@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单例模式</title>
+    <style>
+      #model {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid purple;
+        line-height: 200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="open">open</div>
+    <div class="close">close</div>
+    <script>
+
+      class model {
+        constructor() {
+          var model = document.createElement("div");
+          model.innerHTML = "哈哈哈哈";
+          model.id = "model";
+          model.style.display = "none";
+          document.body.appendChild(model);
+          return model;
+        }
+
+        static getInstance() {
+          if (!model.instance) {
+            model.instance = new model();
+          }
+          return model.instance;
+        }
+        open() {
+          // model.style.display = 'block';
+        }
+        close() {
+          // model.style.display = 'none';
+        }
+      }
+      //   let model1 = model.getInstance();
+      //   console.log(model1)
+      document
+        .getElementsByClassName("open")[0]
+        .addEventListener("click", function () {
+          const modal = model.getInstance();
+          modal.style.display = "block";
+        });
+      document
+        .getElementsByClassName("close")[0]
+        .addEventListener("click", function () {
+          const modal = model.getInstance();
+          modal.style.display = "none";
+        });
+    </script>
+  </body>
+  <script src="./2.js"></script>
+</html>
