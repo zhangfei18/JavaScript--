@@ -16,6 +16,7 @@ class OpenButton{
         model.style.display = 'block';
     }
 }
+// 装饰器类
 class Decorator{
     constructor(open_btn){
         this.open_btn = open_btn;
