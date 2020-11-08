@@ -36,7 +36,7 @@ class Observer {
         console.log('更新');
     }
 }
-// 升级，拓展分发布者类，让所有的订阅者来监听某一个特定状态的改变
+// ***升级，拓展分发布者类，让所有的订阅者来监听某一个特定状态的改变
 class PrdPublisher extends Publisher {
     constructor() {
         super();
