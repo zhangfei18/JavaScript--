@@ -1,4 +1,6 @@
 /**
+ * 代理模式
+ * 什么是？：一个对象通过某种代理的模式来控制对另一个对象的访问；
  * 代理的实际应用：
  * 1.事件代理： 可以大大的优化性能
  * 2.虚拟代理： 将一些代理的操作交付于它
@@ -14,6 +16,7 @@ class PreLoadImage {
         this.imgNode.src = url;
     }
 }
+// 代理：
 class ProxyImage {
     static shamUrl = 'xxxx';
     constructor(tarImg) {
