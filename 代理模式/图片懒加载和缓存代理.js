@@ -8,6 +8,7 @@
  */
 // 虚拟代理
 let oimg = document.querySelector('img');
+// 主体（明星）
 class PreLoadImage {
     constructor(imgNode) {
         this.imgNode = imgNode;
@@ -16,38 +17,19 @@ class PreLoadImage {
         this.imgNode.src = url;
     }
 }
-// 代理：
+// 代理（经纪人）：
 class ProxyImage {
     static shamUrl = 'xxxx';
     constructor(tarImg) {
         this.tarImg = tarImg;
     }
     setSrc(url) {
-        let diliImg = new Image;
-        Image.src = url;
-        Image.onload = function () {
+        let daliImg = new Image;
+        daliImg.src = url;
+        daliImg.onload = function () {
             this.tarImg.setSrc(url)
         }
     }
 }
 let pImg = new PreLoadImage(oimg);
 let proxyImg = new ProxyImage(pImg);
-// 缓存代理
-function addAll() {
-    let len = arguments.length;
-    let result = 0;
-    for (let i = 0; i < len; i++) {
-        result+=arguments[i];
-    }
-    return result;
-}
-const proxyAddAll=(function(){
-    let cache={};
-    return function(){
-        let args = Array.prototype.join.call(arguments);
-        if(cache[args]){
-            return cache[args];
-        }
-        return cache[args] = addAll(...arguments);
-    }
-})()

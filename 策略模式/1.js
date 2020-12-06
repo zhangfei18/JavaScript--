@@ -5,6 +5,7 @@
  *  询价功能的实现
  * 
  */
+// ***JavaScript中策略模式
 // if-else一把梭
 function askPrice(tag, originPrice) {
     if (tag === 'pre') {

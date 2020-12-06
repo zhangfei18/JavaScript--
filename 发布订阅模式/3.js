@@ -25,7 +25,7 @@ class EventBus {
     }
     off(event, cb) {
         let cbs = this.handlers[event];
-        let index = cbs.indexOf();
+        let index = cbs.indexOf(cb);
         if (index !== -1) {
             cbs.splice(index, 1);
         }
