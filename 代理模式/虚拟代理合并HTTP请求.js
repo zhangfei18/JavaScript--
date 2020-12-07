@@ -1,4 +1,4 @@
-const syncchronousFile = function (id) {
+const synchronousFile = function (id) {
     // 上传文件
     console.log('开始同步文件：', id);
 }
@@ -11,7 +11,7 @@ const proxySyncchronousFile = (function () {
             return;
         }
         timer = setTimeout(() => {
-            syncchronousFile(cache);
+            synchronousFile(cache);//真正的上传文件方法
             timer = null;
             clearTimeout(timer);
         }, 2000);
